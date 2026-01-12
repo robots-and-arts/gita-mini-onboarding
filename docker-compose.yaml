@@ -1,0 +1,22 @@
+services:
+
+## TODO : Make this more Robust
+# Running with Hack : http://wiki.ros.org/docker/Tutorials/GUI
+
+  ros2_foxy: # Working 
+    #image: osrf/ros:foxy-desktop
+    privileged: true
+    build:
+      context: .
+      dockerfile: ./Dockerfile.gita
+    network_mode: host
+    environment:
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+      - "$HOME/.Xauthority:/root/.Xauthority:rw"
+      - "/dev:/dev"
+    command: bash
+    stdin_open: true
+    tty: true
