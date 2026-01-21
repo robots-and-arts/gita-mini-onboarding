@@ -145,7 +145,7 @@ ros2 run gita_test gita_test_node --ros-args -p robot_id:=<id>
 
 **Robot IDs:**
 - `1` → Packard
-- `2` → Rosie
+- `3` → Rosie
 
 ---
 
